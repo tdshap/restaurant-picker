@@ -13,7 +13,18 @@ after do
 end  
 
 get ("/") do 
-	erb(:index)
+	time = Time.now
+
+	hour = time.strftime("%H").to_i
+	if 5 < hour < 11
+		spots = Restaurants.find_where(category: "breakfast")
+	elsif 11 < hour < 17
+		spots = Restaurants.find_where(category: "lunch")
+	elsif 17 < hour < 24 || 0 <= hour < 5 
+		spots = Restaurants.find_where(category: "dinner")
+	end   
+
+	erb(:index {locals: {time: time,  }} )
 end 
 
 
