@@ -1,4 +1,4 @@
-require "yelp"
+# require "yelp"
 
 Yelp.client.configure do |config|
 	config.consumer_key = "qjBn7w9ysesA7NfKax6Rmg"
