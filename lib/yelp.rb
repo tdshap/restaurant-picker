@@ -7,18 +7,17 @@ Yelp.client.configure do |config|
 	config.token_secret = "6ihjtlRkfIt9n2udACB7J4E_JVg"
 end
 
-# params = { term: 'restaurant',
-#            limit: 3,
-#            category_filter: 'American (New)'
-#          }
+params = { term: 'restaurant',
+           limit: 3,
+           category_filter: 'American (New)'
+         }
 
 # locale = { lang: 'fr' }
 
-# Yelp.client.search('New York', params, locale)
+# 
+# results = "Yelp.client.search('New York', params"
 
 
 
 
-# response = Yelp.client.search('New York', term: "restaurant", limit: 10)
-
-# parsed_response = JSON.parse(response)
+response = Yelp.client.search('New York', term: "restaurant", limit: 10)
