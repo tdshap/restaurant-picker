@@ -272,6 +272,15 @@ input:focus::-ms-input-placeholder {
 	transition-delay: 0s;
 }
 
+.filter{
+	height: 200px;
+	width:30%;
+	padding:1%;
+	margin-bottom: 200px;
+	background: black;
+	display: inline-block;
+}
+
 @media screen and (max-width: 45em) {
 	.nl-form {
 		font-size: 3em;

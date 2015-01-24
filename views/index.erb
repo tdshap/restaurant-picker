@@ -14,10 +14,13 @@
 	</head>
 	<body>
 		<div class="container">
+			
+<!-- header with meal function -->
 			<header>
-				<h1>Restaurant Picker<span>where you should eat</span></h1>	
-				<h1>It's <%=time %> <span>where you should eat</span></h1>	
+				<h1>It's <%=time %> <span>want some <%= spots %>?</span></h1>	
 			</header>
+
+			<!-- form to choose  -->
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form">
 					I feel like eating
@@ -51,7 +54,22 @@
 					<div class="nl-overlay"></div>
 				</form>
 			</div>
+
+			<section class="divider">filters</section>
+
+			<!-- other ways to filter -->
+			<div class="filters">
+				<div class="cuisine filter"> MAP MODAL</div>
+				<div class="perfect-for filter"> PERFECT FOR </div>
+				<div class="neighborhood filter"> Neighborhood</div>
+			</div>
+
+
 		</div><!-- /container -->
+
+
+
+
 		<script src="js/nlform.js"></script>
 		<script src="javascript/app.js"></script> 
 		<script>

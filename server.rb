@@ -7,6 +7,7 @@ require_relative "lib/yelp.rb"
 require_relative "lib/restaurant.rb"
 require_relative "lib/category.rb"
 require_relative "lib/restaurant_category_tag.rb"
+require_relative "lib/functions.rb"
 
 after do
 	ActiveRecord::Base.connection.close
@@ -14,17 +15,11 @@ end
 
 get ("/") do 
 	time = Time.now
+	formatted_time = time.strftime("%l:%M %p")
+	hour = time.strftime("%k").to_f
+	spots = which_meal(hour)  
 
-	hour = time.strftime("%H").to_i
-	if 5 < hour < 11
-		spots = Restaurants.find_where(category: "breakfast")
-	elsif 11 < hour < 17
-		spots = Restaurants.find_where(category: "lunch")
-	elsif 17 < hour < 24 || 0 <= hour < 5 
-		spots = Restaurants.find_where(category: "dinner")
-	end   
-
-	erb(:index {locals: {time: time,  }} )
+	erb(:index, {locals: {time: formatted_time, spots: spots }} )
 end 
 
 
