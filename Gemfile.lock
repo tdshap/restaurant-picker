@@ -32,6 +32,7 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -69,6 +70,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   httparty
+  pg
   pry
   sinatra
   sinatra-contrib
